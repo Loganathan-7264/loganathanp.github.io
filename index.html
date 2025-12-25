@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loganathan P - Senior QA Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Epilogue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0071e3;
+            --primary-dark: #0056b3;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --bg-white: #ffffff;
+            --bg-light: #f5f5f7;
+            --border-light: #d2d2d7;
+            --success: #34c759;
+            --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background: var(--bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 80px 20px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(52, 199, 89, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            border: 5px solid var(--bg-white);
+            box-shadow: var(--shadow);
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--success);
+            box-shadow: 0 2px 12px rgba(52, 199, 89, 0.2);
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        h1 {
+            font-family: 'Epilogue', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .bio {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 113, 227, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-white);
+            color: var(--text-primary);
+            border: 2px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Contact Links */
+        .contact-bar {
+            background: var(--bg-white);
+            padding: 24px 20px;
+            box-shadow: 0 1px 0 var(--border-light);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--primary);
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-family: 'Epilogue', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .experience-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 24px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .experience-title {
+            flex: 1;
+        }
+
+        .company-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .domain-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .duration {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-card li {
+            padding-left: 24px;
+            margin-bottom: 12px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .experience-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .skill-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .github-link {
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .github-link:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .achievement-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .achievement-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .achievement-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .achievement-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateX(4px);
+        }
+
+        .cert-icon {
+            font-size: 36px;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .cert-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .cert-details p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-light);
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .bio {
+                font-size: 16px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="images/profile.jpg" alt="Loganathan P" class="profile-image">
+            
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Available for Opportunities
+            </div>
+
+            <h1>Loganathan P</h1>
+            <p class="subtitle">Senior Quality Assurance Engineer</p>
+            <p class="bio">
+                4+ years of experience in software testing, specializing in Functional Testing, System Testing, 
+                Regression Testing, and Test Automation across Insurance and Medical Devices domains. 
+                Passionate about delivering high-quality software with precision and continuous improvement.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="mailto:sathishloga7264@gmail.com" class="btn btn-primary">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    Get in Touch
+                </a>
+                <a href="https://github.com/Loganathan-7264" target="_blank" class="btn btn-secondary">
+                    <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+        <div class="contact-links">
+            <a href="tel:+919715194479" class="contact-link">
+                <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                +91 9715194479
+            </a>
+            <a href="mailto:sathishloga7264@gmail.com" class="contact-link">
+                <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+                sathishloga7264@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/loganathan-p" target="_blank" class="contact-link">
+                <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                LinkedIn
+            </a>
+            <a href="https://github.com/Loganathan-7264" target="_blank" class="contact-link">
+                <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Experience Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Experience</span>
+                    <h2>Professional Journey</h2>
+                    <p class="section-description">
+                        A track record of delivering quality across enterprise projects in regulated industries
+                    </p>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div style="display: flex; gap: 20px; align-items: start; flex: 1;">
+                                <div class="company-logo">C</div>
+                                <div class="experience-title">
+                                    <div class="company-name">Capgemini Technology Services</div>
+                                    <h3 class="job-title">Consultant</h3>
+                                    <span class="domain-tag">Medical Devices</span>
+                                </div>
+                            </div>
+                            <div class="duration">Dec 2024 – Present</div>
+                        </div>
+                        <ul>
+                            <li>Executed functional, system, regression, and integration testing for medical device software</li>
+                            <li>Maintained requirements-to-test traceability ensuring compliance with medical regulations</li>
+                            <li>Utilized Playwright MCP to generate automation test scripts from natural language scenarios, expanding regression coverage</li>
+                            <li>Documented detailed test results, tracked defects, and collaborated with developers for resolution</li>
+                            <li>Supported Agile ceremonies and contributed to continuous improvement in QA processes</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div style="display: flex; gap: 20px; align-items: start; flex: 1;">
+                                <div class="company-logo">C</div>
+                                <div class="experience-title">
+                                    <div class="company-name">Cognizant Technology Solutions</div>
+                                    <h3 class="job-title">Associate</h3>
+                                    <span class="domain-tag">Insurance</span>
+                                </div>
+                            </div>
+                            <div class="duration">Jul 2021 – Dec 2024</div>
+                        </div>
+                        <ul>
+                            <li>Led functional and regression test planning across multiple enterprise insurance projects</li>
+                            <li>Designed and executed detailed test cases ensuring 100% requirement coverage</li>
+                            <li>Managed complete defect lifecycle using JIRA and Rally, ensuring timely closure</li>
+                            <li>Performed API Testing using Postman and SQL-based backend validation with PostgreSQL</li>
+                            <li>Automated 25% of regression test suite with Selenium + TestNG, reducing cycle time by 15%</li>
+                            <li>Actively involved in Scrum ceremonies including planning, stand-ups, demos, and retrospectives</li>
+                            <li>Supported UAT coordination with business teams and contributed to smooth release cycles</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Expertise</span>
+                    <h2>Skills & Technologies</h2>
+                    <p class="section-description">
+                        A comprehensive toolkit for ensuring software quality across the testing lifecycle
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>
+                            <span class="skill-icon">✓</span>
+                            Testing Expertise
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Functional Testing</span>
+                            <span class="skill-tag">System Testing</span>
+                            <span class="skill-tag">Regression Testing</span>
+                            <span class="skill-tag">Integration Testing</span>
+                            <span class="skill-tag">Smoke Testing</span>
+                            <span class="skill-tag">UAT</span>
+                            <span class="skill-tag">Test Planning</span>
+                            <span class="skill-tag">Test Case Design</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>
+                            <span class="skill-icon">⚙</span>
+                            Tools & Technologies
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JIRA</span>
+                            <span class="skill-tag">Rally</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">TestNG</span>
+                            <span class="skill-tag">Playwright MCP</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Git/GitHub</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>
+                            <span class="skill-icon">💻</span>
+                            Technical Skills
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Windows</span>
+                            <span class="skill-tag">SSH/SCP</span>
+                            <span class="skill-tag">API Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>
+                            <span class="skill-icon">📋</span>
+                            Methodologies
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile Scrum</span>
+                            <span class="skill-tag">SDLC</span>
+                            <span class="skill-tag">STLC</span>
+                            <span class="skill-tag">Requirement Analysis</span>
+                            <span class="skill-tag">Test Reporting</span>
+                            <span class="skill-tag">FDA/CE Compliance</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Portfolio</span>
+                    <h2>Featured Projects</h2>
+                    <p class="section-description">
+                        Personal projects and learning initiatives demonstrating continuous growth
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Postman API Fundamentals</h3>
+                            <a href="https://github.com/Loganathan-7264/Postman-API-Fundamentals-Student-Expert" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Student Expert certification work featuring API requests, collections, environments, and advanced test scripts for comprehensive API testing.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">POSTMAN</span>
+                            <span class="tech-tag">API TESTING</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Python Playwright Learning</h3>
+                            <a href="https://github.com/Loganathan-7264/python-playwright-learning" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Hands-on repository featuring daily notes, examples, and real-world automation practice with Python and Playwright.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PYTHON</span>
+                            <span class="tech-tag">PLAYWRIGHT</span>
+                            <span class="tech-tag">AUTOMATION</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Playwright Sauce Labs Demo</h3>
+                            <a href="https://github.com/Loganathan-7264/Playwright-Script-for-Sauce-Labs-Demo-Website" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Automated E2E test script for Sauce Labs demo website covering login, cart operations, and checkout workflow.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JAVASCRIPT</span>
+                            <span class="tech-tag">PLAYWRIGHT</span>
+                            <span class="tech-tag">E2E TESTING</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Python Programming</h3>
+                            <a href="https://github.com/Loganathan-7264/Python-Programming" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Collection of Python programming exercises, projects, and automation scripts demonstrating foundational programming skills.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PYTHON</span>
+                            <span class="tech-tag">PROGRAMMING</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Madlibs Game</h3>
+                            <a href="https://github.com/Loganathan-7264/Madlibs-game" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Interactive Madlibs game built with Python demonstrating string manipulation and user input handling.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PYTHON</span>
+                            <span class="tech-tag">GAME DEV</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Simple Calculator</h3>
+                            <a href="https://github.com/Loganathan-7264/Simple-Calculator" target="_blank" class="github-link">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>Basic calculator application built with Python for performing arithmetic operations through a command-line interface.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PYTHON</span>
+                            <span class="tech-tag">CLI APP</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Highlights</span>
+                    <h2>Key Achievements</h2>
+                    <p class="section-description">
+                        Notable accomplishments that demonstrate impact and expertise
+                    </p>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>FDA Compliance Expert</h3>
+                        <p>Played key role in medical device compliance testing aligned with FDA/CE standards and supported 510(k) submission</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">✨</div>
+                        <h3>Zero Defect Delivery</h3>
+                        <p>Delivered projects with zero post-production defects across multiple releases</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎯</div>
+                        <h3>Subject Matter Expert</h3>
+                        <p>Recognized as SME for critical Insurance modules including Telematics and AEB workflows</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⚡</div>
+                        <h3>Automation Champion</h3>
+                        <p>Automated 25% of regression suite, improving speed and coverage significantly</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Credentials</span>
+                    <h2>Certifications</h2>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">🎓</div>
+                        <div class="cert-details">
+                            <h3>Selenium 101</h3>
+                            <p>LambdaTest</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">📡</div>
+                        <div class="cert-details">
+                            <h3>Postman API Fundamentals Student Expert</h3>
+                            <p>Postman</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">🐍</div>
+                        <div class="cert-details">
+                            <h3>PCEP - Certified Entry Level Python Programmer</h3>
+                            <p>Python Institute</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-icon">🤖</div>
+                        <div class="cert-details">
+                            <h3>Automation Anywhere Certified Advanced RPA Professional (V11)</h3>
+                            <p>Automation Anywhere</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="fade-in">
+                <div class="section-header">
+                    <span class="section-tag">Education</span>
+                    <h2>Academic Background</h2>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div style="display: flex; gap: 20px; align-items: start; flex: 1;">
+                            <div class="company-logo">N</div>
+                            <div class="experience-title">
+                                <div class="company-name">Nandha Engineering College, Erode</div>
+                                <h3 class="job-title">Bachelor of Engineering</h3>
+                                <span class="domain-tag">Computer Science & Engineering</span>
+                            </div>
+                        </div>
+                        <div class="duration">2017 – 2021</div>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 16px; font-size: 16px;">CGPA: 7.7</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="mailto:sathishloga7264@gmail.com" class="footer-link">Email</a>
+                <a href="https://www.linkedin.com/in/loganathan-p" target="_blank" class="footer-link">LinkedIn</a>
+                <a href="https://github.com/Loganathan-7264" target="_blank" class="footer-link">GitHub</a>
+                <a href="tel:+919715194479" class="footer-link">Phone</a>
+            </div>
+            <p class="footer-text">© 2025 Loganathan P</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
